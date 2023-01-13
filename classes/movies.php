@@ -5,11 +5,11 @@ class Movie {
   private $original_language;
   private $genres;
   
-  function __construct($_title, $_original_language, $_genres) {
+  function __construct($_title, $_original_language) {
 
     $this->setTitle($_title);
     $this->setOriginal_language($_original_language);
-    $this->setGenres($_genres);
+    // $this->setGenres($_genres);
   }
   /**
    * Set the value of genres
@@ -18,7 +18,7 @@ class Movie {
    */ 
   public function setGenres($_genres)
   {
-    $this->genres = $_genres;
+    $this->genres[] = $_genres;
 
     return $this;
   }

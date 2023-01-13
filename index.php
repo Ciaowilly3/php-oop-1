@@ -1,9 +1,18 @@
 <?php
 require_once "./classes/movies.php";
 
-$avatar = new Movie("Avatar", "English", "fantastico");
-$pulp_fiction = new Movie("Pulp Fiction", "English", "Azione" );
-$scarface = new Movie("Scarface", "English", "Azione");
+$avatar = new Movie("Avatar", "English");
+$pulp_fiction = new Movie("Pulp Fiction", "English");
+$scarface = new Movie("Scarface", "English");
+
+$avatar->setGenres("Fantstico");
+$avatar->setGenres("Fantscientifico");
+
+$pulp_fiction->setGenres("Azione");
+$pulp_fiction->setGenres("Commedia");
+
+$scarface->setGenres("Azione");
+$scarface->setGenres("Drammatico");
 
 ?>
 
@@ -28,7 +37,7 @@ $scarface = new Movie("Scarface", "English", "Azione");
                     <h5>Titolo Film: <?php  echo $avatar->getTitle()?></h5>
                     <ul>
                         <li>Lingua originale: <?php echo $avatar->getOriginal_language()?></li>
-                        <li>generi: <?php echo $avatar->getGenres()?></li>
+                        <li>generi: <?php echo implode(" e ", $avatar->getGenres()); ?></li>
                     </ul>
                 </li>
             
@@ -37,7 +46,7 @@ $scarface = new Movie("Scarface", "English", "Azione");
                     <h5>Titolo Film: <?php  echo $pulp_fiction->getTitle()?></h5>
                     <ul>
                         <li>Lingua originale: <?php echo $pulp_fiction->getOriginal_language()?></li>
-                        <li>generi: <?php echo $pulp_fiction->getGenres()?></li>
+                        <li>generi: <?php echo implode(" e ", $pulp_fiction->getGenres()); ?></li>
                     </ul>
                 </li>
             
@@ -46,7 +55,7 @@ $scarface = new Movie("Scarface", "English", "Azione");
                     <h5>Titolo Film: <?php  echo $scarface->getTitle()?></h5>
                     <ul>
                         <li>Lingua originale: <?php echo $scarface->getOriginal_language()?></li>
-                        <li>generi: <?php echo $scarface->getGenres()?></li>
+                        <li>generi: <?php echo implode(" e ", $scarface->getGenres()); ?></li>
                     </ul>
                 </li>
             </ul>
